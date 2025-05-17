@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+:root {
+  --clr-Purple-100: #dacffc;
+  --clr-Purple-500: #7650dc;
+  --clr-Yellow-100: #f9eee1;
+  --clr-Yellow-500: #ffcb6b;
+
+  --clr-White: #ffffff;
+  --clr-Black: #121212;
+
+  --ff-main: "DM Sans", sans-serif;
+  --fs-body: 1.25rem;
+  --fs-heading: 1.75rem;
+
+  --fw-400: 400;
+  --fw-500: 500;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-main);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-body);
+  background-color: #f9f9f9f9;
+  line-height: 1.1;
+  color: var(--clr-Black);
+}
+
+
+main {
+  padding-top: 40px;
+}
+
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+}
+.create {
+  background-color: var(--clr-Yellow-100);
+  padding: 1rem;
+}
+
+.Content {
+  background-color: var(--clr-Yellow-500);
+  padding: 1rem;
+}
+
+.media {
+  color: var(--clr-White);
+  text-align: center;
+  background-color: var(--clr-Purple-500);
+  padding: 1rem;
+}
+.media img {
+  max-width: 10rem;
+  margin-inline: auto;
+}
+.manage {
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--clr-White);
+  padding: 1rem;
+}
+.manage img {
+  position: relative;
+  right: -2rem;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+.Posting {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--clr-Yellow-500);
+  padding: 1rem;
+  padding: 1rem;
+}
+.Posting img {
+  position: absolute;
+  bottom: -3.1rem;
+  left: 1.4rem;
+}
+.schadule {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--clr-Purple-100);
+  padding: 1rem;
+}
+.schadule img {
+  position: relative;
+  right: -1.5rem;
+  max-width: 100%;
+}
+.audience {
+  background-color: var(--clr-White);
+  padding: 1rem;
+}
+.followers {
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--clr-Purple-500);
+  padding: 1rem;
+  place-content: center;
+  color: var(--clr-White);
+}
+
+.bento-grid-container {
+  display: grid;
+  grid-template-rows: 13rem 13rem 13rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
+  grid-template-areas:
+    "clm1 clm2 clm3"
+    "clm1 clm2 clm3"
+    "clm1 clm4 clm4";
+  margin-inline: auto;
+  max-width: 60rem;
+}
+
+.bento-grid-container > *,
+.inside-items {
+  display: grid;
+  gap: 1rem;
+}
+
+.bento-grid-item {
+  border-radius: 0.5rem;
+}
+
+.inside-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.inside-items:nth-child(1) {
+  grid-template-columns: 0.95fr 2fr;
+}
+
+.column-1 {
+  grid-area: clm1;
+}
+.column-2 {
+  grid-area: clm2;
+}
+.column-3 {
+  grid-area: clm3;
+}
+.column-4 {
+  grid-area: clm4;
+}
+
+img {
+  max-width: 80%;
+  display: block;
+}
+
+/* text styles */
+h1 {
+  font-size: 2.75rem;
+  font-weight: var(--fw-500);
+}
+
+h2 {
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-500);
+  line-height: 0.9;
+}
+
+/* media query */
+@media screen and (max-width: 950px) {
+  main {
+    padding-top: 0;
+  }
+    .bento-grid-container {
+        grid-template-rows: 13rem 13rem 13rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "clm2 clm3"
+          "clm2 clm3"
+          "clm4 clm4"
+          "clm1 clm1";
+      }
+
+      .column-1 {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+}
+
+@media screen and (max-width: 710px) {
+  main {
+    padding-top: 0;
+  }
+    .bento-grid-container {
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'clm2'
+      
+        'clm3'
+          'clm4'
+        'clm1'
+      }
+      .column-1 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .inside-items, .inside-items:nth-child(1), .column-1 {
+        grid-template-columns: 1fr;
+      }
+
+      .manage img {
+        position: relative;
+        max-width: 80%;
+        margin-bottom: 1rem;
+      }
+
+      .Posting img {
+        position: relative;
+        bottom: -1rem;
+        left: 0;
+      }
+
+
+      .schadule img {
+        left: 0rem;
+      }
+
+      .followers {
+        text-align: center;
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .followers img {
+        position: relative;
+        right: -5rem;
+    }
+
+    .followers h2 {
+    padding: 2rem;
+    font-size: 4.5rem;
+    }
+
+    .media h1 {
+        padding: 2rem;
+        font-size: 5rem;
+    }
+}
